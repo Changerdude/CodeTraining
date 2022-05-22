@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "name": "World of Warcraft",
+      "splashArt": "",
+      "timeSpent": "400+ days",
+      "timeSpentWeekly": 40,
+      "moneySpent": 1500.00,
+      "numFriendsPlay": 6,
+      "daysPlayed": ["mon","tue","wed","thu","fri","sat","sun"]
+    },
+    {
+      "name": "League of Legends",
+      "splashArt": "",
+      "timeSpent": "1000 hours",
+      "timeSpentWeekly": 4,
+      "moneySpent": 2500,
+      "numFriendsPlay": 5,
+      "daysPlayed": ["mon","tue","wed","thu","fri","sat","sun"]
+    },
+    {
+      "name": "Lost Arc",
+      "splashArt": "",
+      "timeSpent": "324 hours",
+      "timeSpentWeekly": 1,
+      "moneySpent": 50.00,
+      "numFriendsPlay": 0,
+      "daysPlayed": ["wed","thu","fri"]
+    },
+    {
+      "name": "Deeprock Galactic",
+      "splashArt": "",
+      "timeSpent": "279 hours",
+      "timeSpentWeekly": 2,
+      "moneySpent": 50.00,
+      "numFriendsPlay": 3,
+      "daysPlayed": ["sat","sun"]
+    },
+    {
+      "name": "OSRS",
+      "splashArt": "",
+      "timeSpent": "3000 hours",
+      "timeSpentWeekly": 1,
+      "moneySpent": 1000.00,
+      "numFriendsPlay": 7,
+      "daysPlayed": ["mon","tue","wed","thu","fri"]
+    }
+  ]
+}

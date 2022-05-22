@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="don_t_press_this_button">Don\'t Press This Button</string>
+</resources>

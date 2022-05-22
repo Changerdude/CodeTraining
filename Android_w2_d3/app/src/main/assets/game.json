@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "name": "World of Warcraft",
+      "splashArt": "https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png",
+      "timeSpent": "400+ days",
+      "timeSpentWeekly": 40,
+      "moneySpent": 1500.00,
+      "numFriendsPlay": 6,
+      "daysPlayed": ["mon","tue","wed","thu","fri","sat","sun"]
+    },
+    {
+      "name": "League of Legends",
+      "splashArt": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/LoL_icon.svg/256px-LoL_icon.svg.png",
+      "timeSpent": "1000 hours",
+      "timeSpentWeekly": 4,
+      "moneySpent": 2500,
+      "numFriendsPlay": 5,
+      "daysPlayed": ["mon","tue","wed","thu","fri","sat","sun"]
+    },
+    {
+      "name": "Lost Arc",
+      "splashArt": "https://m.media-amazon.com/images/M/MV5BOTA3YjIxNjYtNzU1ZS00NmEzLTk4ZjItN2M4MGYwMDcwZDM4XkEyXkFqcGdeQXVyODczMTkwNzY@._V1_.jpg",
+      "timeSpent": "324 hours",
+      "timeSpentWeekly": 1,
+      "moneySpent": 50.00,
+      "numFriendsPlay": 0,
+      "daysPlayed": ["wed","thu","fri"]
+    },
+    {
+      "name": "Deeprock Galactic",
+      "splashArt": "https://preview.redd.it/m5crnktoxlw41.png?width=1023&format=png&auto=webp&s=56813972de2d76903b96317c221e8566b3d6a269",
+      "timeSpent": "279 hours",
+      "timeSpentWeekly": 2,
+      "moneySpent": 50.00,
+      "numFriendsPlay": 3,
+      "daysPlayed": ["sat","sun"]
+    },
+    {
+      "name": "OSRS",
+      "splashArt": "https://www.runescape.com/img/rsp777/social-share.jpg?1",
+      "timeSpent": "3000 hours",
+      "timeSpentWeekly": 1,
+      "moneySpent": 1000.00,
+      "numFriendsPlay": 7,
+      "daysPlayed": ["mon","tue","wed","thu","fri"]
+    }
+  ]
+}

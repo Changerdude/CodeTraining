@@ -1,0 +1,32 @@
+{
+  "diet": [
+    {
+      "food":"Egg",
+      "weight":"2oz",
+      "calories": "120",
+      "protein": "15g",
+      "fats": "5g"
+    },
+    {
+      "food":"Chicken",
+      "weight":"6oz",
+      "calories": "210",
+      "protein": "30g",
+      "fats": "5g"
+    },
+    {
+      "food":"Steak",
+      "weight":"12oz",
+      "calories": "450",
+      "protein": "35g",
+      "fats": "35g"
+    },
+    {
+      "food":"Pasta",
+      "weight":"6oz",
+      "calories": "200",
+      "protein": "1g",
+      "fats": "1g"
+    }
+  ]
+}
