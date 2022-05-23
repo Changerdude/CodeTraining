@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class StudentAdapter( private val studentList: List<Students>): RecyclerView.Adapter<ViewHolder>() {
+
+    //Make our student list a mutable list to manipulate
    private var mStudentList: MutableList<Students> = studentList as MutableList<Students>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,9 +27,9 @@ class StudentAdapter( private val studentList: List<Students>): RecyclerView.Ada
         val itemVM = mStudentList[position]
         holder.fName.text = itemVM.firstName
         holder.lName.text = itemVM.lastName
-        //click listener
+        //click listener for cards
         holder.cards.setOnClickListener{
-            val intent = Intent(holder.cards.context, DetailedView::class.java)
+            val intent = Intent(holder.cards.context, UpdateStudent::class.java)
             intent.putExtra("student", itemVM)
 
             holder.cards.context.startActivity(intent)
@@ -38,7 +40,7 @@ class StudentAdapter( private val studentList: List<Students>): RecyclerView.Ada
         //size of the list/data source
         return mStudentList.size
     }
-
+        //delete item from both repo and the mutable list, then notify the adapter of the change
     fun deleteItem(i : Int, repo : StudentRepository){
         repo.deleteStudent(mStudentList[i])
         mStudentList.remove(mStudentList[i])

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyFirstRoom"
         tools:targetApi="31">
         <activity
-            android:name=".DetailedView"
+            android:name=".UpdateStudent"
             android:exported="false" />
         <activity
             android:name=".InsertNewStudent"

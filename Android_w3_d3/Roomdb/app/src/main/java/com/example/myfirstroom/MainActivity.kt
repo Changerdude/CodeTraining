@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+            //Find and initialize button to insert Student
             var buttonInsert: View = findViewById(R.id.plus)
             buttonInsert.setOnClickListener(){
                 val insertIntent = Intent(this, InsertNewStudent::class.java)
@@ -33,17 +33,19 @@ class MainActivity : AppCompatActivity() {
 
             var rcView: RecyclerView = findViewById(R.id.rcView)
             rcView.layoutManager = LinearLayoutManager(this)
-            // pass to adapter
+            // pass studentlist to adapter as our adapter
             val adapter = StudentAdapter(studentList)
 
-
+            //Override on swipe function to go to delete item in adapter class
             val swipeGesture = object : SwipeGesture() {
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                    adapter.deleteItem(viewHolder.adapterPosition, repo)
                 }
             }
+            //Attach the touch helper to our recyclerview or the list
             val touchHelper = ItemTouchHelper(swipeGesture)
             touchHelper.attachToRecyclerView(rcView)
+            //Attach our adapter to the recyclerview adapter
             rcView.adapter = adapter
         }
 
