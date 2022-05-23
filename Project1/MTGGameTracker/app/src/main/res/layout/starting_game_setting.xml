@@ -40,7 +40,7 @@
         android:id="@+id/bnStartGame"
         android:text="Start Game"
         android:layout_marginTop="15dp"
-        android:onClick="checkSettings"></Button>
+        android:onClick="checkSettings"/>
 <!--        Need the fun to check players <= 8, life total is positive,
              and Nothing is null. Else pop up "Please fill out" dialog-->
 </LinearLayout>
