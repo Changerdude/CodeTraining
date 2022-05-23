@@ -36,6 +36,7 @@
             android:background="#AD799C"
             android:hint="First Name"
 
+
             android:id="@+id/inputFirstName"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
