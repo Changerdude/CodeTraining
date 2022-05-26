@@ -1,9 +1,10 @@
-package com.example.mtggametracker
+package com.example.mtggametracker.uI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.mtggametracker.R
 
 class MainMenu : AppCompatActivity() {
 

@@ -17,10 +17,16 @@
             android:name=".UserInfoPage"
             android:exported="false" />
         <activity
-            android:name=".GameScreen"
+            android:name=".uI.NewPlayer"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
+            android:name=".uI.UserInfoPage"
+            android:exported="false" />
+        <activity
+            android:name=".uI.GameScreen"
+            android:exported="false" />
+        <activity
+            android:name=".uI.MainMenu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

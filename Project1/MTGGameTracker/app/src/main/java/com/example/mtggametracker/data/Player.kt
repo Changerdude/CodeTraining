@@ -14,3 +14,4 @@ data class Player(@PrimaryKey(autoGenerate = true)var playerId: Int?,
                   @ColumnInfo(name = "playerKills")var playerKills: Int?,
                   @ColumnInfo(name = "playerMoos")var playerMoos: Int?
                   ): Serializable
+

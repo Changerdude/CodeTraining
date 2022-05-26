@@ -1,4 +1,4 @@
-package com.example.mtggametracker.data
+package com.example.mtggametracker.uI
 
 
 import android.view.LayoutInflater
@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mtggametracker.R
+import com.example.mtggametracker.data.*
 
 class PlayerAdapter(private val playerList: List<Player>): RecyclerView.Adapter<ViewHolder>(){
-    private var mplayerList: MutableList<Player> = playerList as MutableList<Player>
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
@@ -18,19 +19,23 @@ class PlayerAdapter(private val playerList: List<Player>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val player = mplayerList[position]
+        val player = playerList[position]
         holder.infoViewName.text = player.name
         holder.infoViewPlayed.text = player.gamesPlayed.toString()
         holder.infoViewWon.text = player.gamesWon.toString()
-        holder.infoViewPerc.text = ((player.gamesWon?.div(player.gamesPlayed!!))
-            ?.times(100)).toString()
+        holder.infoViewPerc.text = (
+                if (player.gamesPlayed == 0) { 0
+                } else {
+                    (player.gamesWon?.div(player.gamesPlayed!!))?.times(100)
+                }).toString()
+
         holder.infoViewKills.text = player.playerKills.toString()
         holder.infoViewMoos.text = player.playerMoos.toString()
     }
 
     override fun getItemCount(): Int {
 
-        return mplayerList.size
+        return playerList.size
     }
 
 
