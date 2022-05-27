@@ -27,24 +27,33 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="Player Name"
-        android:background="@color/pastel_lime"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextNewPlayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/pastel_lime"
              />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
         android:id="@+id/bnAddPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Player"
         android:layout_margin="10dp"
         />
-
+    <Button
+        android:id="@+id/bnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        />
+    </LinearLayout>
 </LinearLayout>

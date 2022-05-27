@@ -12,12 +12,9 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var startGame: View = findViewById(R.id.startGame)
-        startGame.setOnClickListener(){
-            startActivity(Intent(this, MainMenu::class.java))}
 
-        var playerInfo: View = findViewById(R.id.viewInfo)
-        playerInfo.setOnClickListener(){
-            startActivity(Intent(this, UserInfoPage::class.java))}
     }
+    fun startGame(view: View){startActivity(Intent(this, MainMenu::class.java))}
+
+    fun playerInfo(view: View){startActivity(Intent(this, UserInfoPage::class.java))}
 }

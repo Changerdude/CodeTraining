@@ -3,39 +3,22 @@ package com.example.myfirstretro
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import okhttp3.RequestBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface RetroApiInterface {
-//    companion object {
-//        var INSTANCE: AppDatabase? = null
-//
-//        fun getInstance(context: Context) :AppDatabase?{
-//            //If not created, create it
-//            if( INSTANCE == null){
-//                //Rule: Acquire instance of RoomDB
-//                //We are acquiring an instance of RoomDB Builder
-//                synchronized(AppDatabase::class){
-//                    INSTANCE = Room.databaseBuilder(context.applicationContext,
-//                        AppDatabase::class.java, "students.db")
-//                        .allowMainThreadQueries().build()
-//                }
-//            }
-//
-//            return INSTANCE
-//        }
-//
-//        fun destroyInstance(){
-//            INSTANCE = null
-//        }
-//
-//    }
 
-
+//@GET is a http request method
     @GET("players.json")
-    fun getAllPlayers(): Call<List<Player>>
+   suspend fun getAllPlayers(): Response<List<Player>>
+    @POST("/post")
+    suspend fun createPlayer(@Body requestBody: RequestBody): Response<RequestBody>
 
 
     companion object{
@@ -49,3 +32,4 @@ interface RetroApiInterface {
         }
     }
 }
+//Creating an instance will always be a builder, an adapter/converter, then build.
