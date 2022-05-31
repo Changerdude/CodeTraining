@@ -28,10 +28,32 @@ class MtgVM(app: Application): ViewModel() {
             repo.addPlayer(
                 Player(
                     playerId = null, name = name, gamesPlayed = 0,
-                    gamesWon = 0, playerKills = 0, playerMoos = 0))
+                    gamesWon = 0, percentWon = 0, playerKills = 0,
+                    playerMoos = 0))
     }
 
-    //TODO: Believe search functionality here too
+    fun searchPlayers(searchText: String?): List<Player>?{
+        return repo.searchPlayers(searchText)
+    }
+
+    fun orderName(isAsc: Boolean): List<Player>?{
+        return repo.orderName(isAsc)
+    }
+    fun orderPlayed(isAsc: Boolean): List<Player>?{
+        return repo.orderPlayed(isAsc)
+    }
+    fun orderWon(isAsc: Boolean): List<Player>?{
+        return repo.orderWon(isAsc)
+    }
+    fun orderPerc(isAsc: Boolean): List<Player>?{
+        return repo.orderPerc(isAsc)
+    }
+    fun orderKills(isAsc: Boolean): List<Player>?{
+        return repo.orderKills(isAsc)
+    }
+    fun orderMoos(isAsc: Boolean): List<Player>?{
+        return repo.orderMoos(isAsc)
+    }
 
     fun updatePlayer(player: Player) = viewModelScope.launch  {
         repo.updatePlayer(player)

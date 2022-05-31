@@ -26,7 +26,7 @@ abstract class AppDatabase : RoomDatabase(){
                 synchronized(AppDatabase::class){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         AppDatabase::class.java, "players.db")
-                        .allowMainThreadQueries().build()
+                        .allowMainThreadQueries().addMigrations().build()
                 }
             }
 

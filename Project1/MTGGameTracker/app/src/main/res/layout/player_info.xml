@@ -10,12 +10,13 @@
     android:id="@+id/infoViewName"
     android:text="Name"
     android:layout_width="35dp"
-    android:layout_height="wrap_content"
+    android:layout_height="22dp"
     android:layout_columnWeight="1"
     android:textSize="16sp"
-    android:background="@color/ash"
-    android:gravity="center"
-    />
+    android:background="@color/brown_p"
+    android:textColor="@color/tan"
+    android:gravity="center"/>
+
     <TextView
         android:id="@+id/infoViewPlayed"
         android:text="Played"
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:textSize="16sp"
-        android:background="@color/grey"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
         android:gravity="center"
         />
     <TextView
@@ -33,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:textSize="16sp"
-        android:background="@color/ash"
+        android:background="@color/brown_p"
+        android:textColor="@color/tan"
         android:gravity="center"
 
         />
@@ -44,7 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:textSize="16sp"
-        android:background="@color/grey"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
         android:gravity="center"
         />
     <TextView
@@ -54,7 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:textSize="16sp"
-        android:background="@color/ash"
+        android:background="@color/brown_p"
+        android:textColor="@color/tan"
         android:gravity="center"
         />
     <TextView
@@ -64,7 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:textSize="16sp"
-        android:background="@color/grey"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
         android:gravity="center"
         />
 

@@ -10,4 +10,9 @@
     <color name="ash">#FFc9c9c9</color>
     <color name="grey">#FF999999</color>
     <color name="pastel_lime">#FFa3d194</color>
+    <color name="dark">#1d181c</color>
+    <color name="burnt_o">#c46641</color>
+    <color name="pink">#f6bbbf</color>
+    <color name="brown_p">#4a383c</color>
+    <color name="tan">#f9e3d0</color>
 </resources>

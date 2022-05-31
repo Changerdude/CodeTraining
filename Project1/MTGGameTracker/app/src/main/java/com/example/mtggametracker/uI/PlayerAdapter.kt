@@ -1,16 +1,19 @@
 package com.example.mtggametracker.uI
 
 
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mtggametracker.MtgVM
 import com.example.mtggametracker.R
 import com.example.mtggametracker.data.*
 
 class PlayerAdapter(private val onPlayerClick: (position:Int) -> Unit, private var playerList: List<Player>): RecyclerView.Adapter<ViewHolder>(){
-
+    var isAsc = true
+    var dropPosition = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
@@ -23,13 +26,13 @@ class PlayerAdapter(private val onPlayerClick: (position:Int) -> Unit, private v
         holder.infoViewName.text = player.name
         holder.infoViewPlayed.text = player.gamesPlayed.toString()
         holder.infoViewWon.text = player.gamesWon.toString()
-
-                if (player.gamesPlayed == 0) {
-                    holder.infoViewPerc.text = "0"
-                } else {
-                    holder.infoViewPerc.text = player.gamesWon?.toDouble()?.div(player.gamesPlayed?.toDouble()!!)
-                        ?.times(100)?.toInt().toString()
-                }
+        holder.infoViewPerc.text = player.percentWon.toString()
+//                if (player.gamesPlayed == 0) {
+//                    holder.infoViewPerc.text = "0"
+//                } else {
+//                    holder.infoViewPerc.text = player.gamesWon?.toDouble()?.div(player.gamesPlayed?.toDouble()!!)
+//                        ?.times(100)?.toInt().toString()
+//                }
 
         holder.infoViewKills.text = player.playerKills.toString()
         holder.infoViewMoos.text = player.playerMoos.toString()
@@ -40,10 +43,27 @@ class PlayerAdapter(private val onPlayerClick: (position:Int) -> Unit, private v
         return playerList.size
     }
 
-    fun setPlayers(playerList: List<Player>){
-        this.playerList = playerList
+    fun setPlayers(playerList: List<Player>?){
+        if (playerList != null) {
+            this.playerList = playerList
+        }
         notifyDataSetChanged()
     }
+
+    fun setOrder(vm: MtgVM){
+
+
+        when (dropPosition) {
+            1 -> setPlayers(vm.orderName(isAsc))
+            2 -> setPlayers(vm.orderPlayed(isAsc))
+            3 -> setPlayers(vm.orderWon(isAsc))
+            4 -> setPlayers(vm.orderPerc(isAsc))
+            5 -> setPlayers(vm.orderKills(isAsc))
+            6 -> setPlayers(vm.orderMoos(isAsc))
+        }
+
+    }
+
 
 
 
@@ -60,7 +80,7 @@ class ViewHolder(view: View , var onPlayerClick: (position: Int) -> Unit)
     val infoViewKills: TextView = view.findViewById(R.id.infoViewKills)
     val infoViewMoos: TextView = view.findViewById(R.id.infoViewMoos)
 
-   //TODO: Add click listener for recyclerview
+
    override fun onClick(v: View?) {
        val position = adapterPosition
        onPlayerClick(position)

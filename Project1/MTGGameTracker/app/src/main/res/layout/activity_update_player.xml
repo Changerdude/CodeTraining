@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark"
     tools:context=".uI.UpdatePlayer">
     <TextView
         android:id="@+id/title"
@@ -15,6 +16,7 @@
         android:textStyle="bold"
         android:textSize="30sp"
         android:text="Update Player"
+        android:textColor="@color/tan"
         android:padding="30dp"
         />
     <LinearLayout
@@ -88,8 +90,23 @@
                 android:hint="Moo's Activated" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
+    <TextView
+        android:id="@+id/txtMoos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textBoxLayout"
+        app:layout_constraintStart_toStartOf="@+id/textBoxLayout"
+        android:layout_marginTop="-30dp"
+
+        android:layout_marginLeft="30dp"
+        android:text="@string/moo"
+        android:textColor="@color/tan"
+        android:textStyle="italic"/>
+
+
 <LinearLayout
-    app:layout_constraintTop_toBottomOf="@+id/textBoxLayout"
+    android:id="@+id/buttons"
+    app:layout_constraintTop_toBottomOf="@+id/txtMoos"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
