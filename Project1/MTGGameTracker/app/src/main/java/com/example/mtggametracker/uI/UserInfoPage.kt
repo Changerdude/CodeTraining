@@ -72,7 +72,7 @@ class UserInfoPage : AppCompatActivity() {
 
         search.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                var searchResult = vm.searchPlayers(p0) as List<Player>?
+                var searchResult = vm.searchPlayers(p0)
                 adapter.setPlayers(searchResult)
                 searchList = vm.searchPlayers(p0) as ArrayList<Player>
 
@@ -84,7 +84,7 @@ class UserInfoPage : AppCompatActivity() {
 
             override fun onQueryTextChange(p0: String?): Boolean {
                 isSearching = p0 != null
-                var searchResult = vm.searchPlayers(p0) as List<Player>?
+                var searchResult = vm.searchPlayers(p0)
                 adapter.setPlayers(searchResult)
                 searchList = vm.searchPlayers(p0) as ArrayList<Player>
                     if(searchList.size == 0){

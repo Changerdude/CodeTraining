@@ -64,6 +64,7 @@
         android:layout_height="wrap_content"
         android:text="Sort By"
         android:textColor="@color/tan"
+        android:background="@color/brown_p"
         android:gravity="center"/>
         <Spinner
             android:id="@+id/dropdownMenu"

@@ -10,8 +10,7 @@ interface PlayerDAO {
 
     @Insert
   fun addPlayer(player: Player)
-
-    @Query("select * from players")
+    @Query("select * from players order by playerId desc")
     fun selectPlayers(): LiveData<List<Player>>
 //  TODO: Add the query for the search functionality
     @Query("select * from players where name like '%' || :searchText || '%'")

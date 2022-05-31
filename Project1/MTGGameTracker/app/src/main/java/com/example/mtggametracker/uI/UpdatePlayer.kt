@@ -80,7 +80,15 @@ class UpdatePlayer : AppCompatActivity() {
         }
 
         mooing.setOnClickListener(){
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=ZiqRKlpsavA")))
+            val dialog = AlertDialog.Builder(this)
+                .setTitle("Redirecting")
+                .setMessage("This will launch YouTube, are you sure?")
+                .setPositiveButton("Continue"){ dialog, which ->
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=ZiqRKlpsavA")))
+                }.setNegativeButton("Cancel"){dialog, which ->
+                }.create()
+                .show()
+
         }
         bnDelete.setOnClickListener(){
             val dialog = AlertDialog.Builder(this)
