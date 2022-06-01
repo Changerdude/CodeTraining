@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_columnWeight="9"
+    android:columnCount="6"
+    android:layout_marginVertical="2dp"
+    >
+<TextView
+    android:id="@+id/infoViewName"
+    android:text="Name"
+    android:layout_width="35dp"
+    android:layout_height="22dp"
+    android:layout_columnWeight="1"
+    android:textSize="16sp"
+    android:background="@color/brown_p"
+    android:textColor="@color/tan"
+    android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/infoViewPlayed"
+        android:text="Played"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textSize="16sp"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/infoViewWon"
+        android:text="Won"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textSize="16sp"
+        android:background="@color/brown_p"
+        android:textColor="@color/tan"
+        android:gravity="center"
+
+        />
+    <TextView
+        android:id="@+id/infoViewPerc"
+        android:text="Win %"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textSize="16sp"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/infoViewKills"
+        android:text="Kills"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textSize="16sp"
+        android:background="@color/brown_p"
+        android:textColor="@color/tan"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/infoViewMoos"
+        android:text="Moos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textSize="16sp"
+        android:background="@color/pink"
+        android:textColor="@color/brown_p"
+        android:gravity="center"
+        />
+
+
+
+</GridLayout>

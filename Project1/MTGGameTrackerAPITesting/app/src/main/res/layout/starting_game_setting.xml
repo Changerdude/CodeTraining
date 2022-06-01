@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:gravity="center"
+>
+
+    <EditText
+        android:id="@+id/editNumPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textNumPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Number of Players(Max 8)" />
+
+    <EditText
+        android:id="@+id/editLifeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textStartingLifeTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Starting Life Total" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bnStartGame"
+        android:text="Start Game"
+        android:layout_marginTop="15dp"
+        android:onClick="checkSettings"/>
+<!--        Need the fun to check players <= 8, life total is positive,
+             and Nothing is null. Else pop up "Please fill out" dialog-->
+</LinearLayout>
