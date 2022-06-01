@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +26,6 @@ class Fragment1 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var frag1bn : Button
-    lateinit var com : Communicator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +42,25 @@ class Fragment1 : Fragment() {
         // Inflate the layout for this fragment
        var myView = inflater.inflate(R.layout.fragment_1, container, false)
 
-        frag1bn = myView.findViewById(R.id.fragBn1)
+        frag1bn = myView.findViewById<Button>(R.id.fragBn1)
+        var text : EditText = myView.findViewById(R.id.frag1Text)
+
         frag1bn.setOnClickListener(){
+            //Sending Data
+            val result : String = text.text.toString()
+            setFragmentResult("requestKey1", bundleOf("data" to result))
+
+            parentFragmentManager.beginTransaction()
+            //    .setCustomAnimations(R.anim.from_right, 0, 0, R.anim.to_right )
+                .add(R.id.container,Fragment2())
+                .addToBackStack(null)
+                .commit()
+
 
         }
-
+        setFragmentResultListener("requestKey2"){ key, result ->
+            text.setText(result.getString("data"))
+        }
 
         return myView
     }

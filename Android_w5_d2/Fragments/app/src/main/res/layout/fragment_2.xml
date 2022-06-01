@@ -21,12 +21,13 @@
             android:textSize="34sp"
             android:textAlignment="center"/>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/frag2Text"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity ="center">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frag2Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                  />
