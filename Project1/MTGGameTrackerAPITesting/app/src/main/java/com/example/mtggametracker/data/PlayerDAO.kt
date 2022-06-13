@@ -1,8 +1,6 @@
 package com.example.mtggametracker.data
 
-import android.icu.text.StringSearch
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 @Dao
@@ -45,4 +43,7 @@ interface PlayerDAO {
 
     @Delete
     fun deletePlayer(player: Player)
+
+    @Query("DELETE FROM players")
+    fun deleteAll()
 }

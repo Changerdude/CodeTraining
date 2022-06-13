@@ -4,21 +4,36 @@ import android.content.Context
 import android.icu.text.StringSearch
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import okhttp3.RequestBody
 
-class PlayerRepository(context: Context) {
+class PlayerRepository(context: Context, private val inter : RetrofitApi) {
     var db: PlayerDAO? = AppDatabase.getInstance(context)?.getDao()
+    //TODO will need a way to get/make/input this for seperate groups
+    var sheetId : String = "1Jzl_rSNZZewgjZYwqNgiROblp1gOM3hjQVU8uObMi-Y"
 
-  fun getAllPlayers(): LiveData<List<Player>>? {
-        return db?.selectPlayers()
+    //If retrofit get players returns players, reload database with those values, if not return
+    // toast saying could not sync and to reload app later.
+
+  suspend fun getAllPlayers(): LiveData<List<Player>>? {
+      if(inter.getAllPlayers().isSuccessful){
+          db?.deleteAll()
+          for(i in 0..(inter.getAllPlayers().body()?.size!!)){
+              db?.addPlayer(inter.getAllPlayers().body()!![i])
+          }
+      }
+
+          return db?.selectPlayers()
+
     }
 
-    //TODO: Search Functionality
+
     fun searchPlayers(searchText: String?): List<Player>?{
        return db?.searchPlayers(searchText)
     }
 
-   fun addPlayer(player: Player){
+   suspend fun addPlayer(player: Player , rB : RequestBody){
         db?.addPlayer(player)
+        inter.createPlayer(rB)
     }
 
     fun orderName(isAsc: Boolean): List<Player>?{
@@ -40,12 +55,14 @@ class PlayerRepository(context: Context) {
         return db?.orderMoos(isAsc)
     }
 
-    fun updatePlayer(player: Player){
+    suspend fun updatePlayer(player: Player){
         db?.updatePlayer(player)
+        inter.updatePlayer(sheetId + "/values/" + player.name)
     }
 
-    fun deletePlayer(player: Player){
+    suspend fun deletePlayer(player: Player){
         db?.deletePlayer(player)
+        inter.deletePlayer(sheetId + "/values/" + player.name)
     }
 
 }

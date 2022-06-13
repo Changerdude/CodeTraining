@@ -7,10 +7,9 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
-import okhttp3.MediaType
-import okhttp3.RequestBody.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -43,8 +42,8 @@ class MainActivity : AppCompatActivity() {
             var p = Player(s,0,0,0,0)
 
             val gsonPretty = GsonBuilder().setPrettyPrinting().create()
-            val pJson : String = gsonPretty.toJson(p)
-            vm.createPlayer(pJson.toRequestBody())
+            val pJson : String = gsonPretty.toJson(p.toString())
+            vm.createPlayer(pJson.toRequestBody("application/json".toMediaTypeOrNull()))
         }
 
     }
@@ -58,3 +57,15 @@ class MainActivity : AppCompatActivity() {
 //4.Create a retrofit Interface for all our request methods
 //5.Consume the rest API endpoints (response - success/error)
 //6.Process and attach it to your view (Recycler View)
+
+//Quality Code
+//1 Coding standards ( Space, UPPERCASE, camelCase, TitleCase)
+//2 Doc on top of every file
+//3 //On top of every function oneliner explaining what it is
+//4 Exception handling
+//5 Logging & Crashlytics & Sonarqube
+//6 Clean Architecture - Adheres to a design pattern which is MVVM in our case
+//7 Write Unit Test Cases and make sure at least you have 70% coverage
+//8 Remove all println in production app
+//9 Do not log or print sensitive information
+//10 Do not let the Log in production environment(Production App)

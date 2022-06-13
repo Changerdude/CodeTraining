@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -18,9 +19,9 @@ interface RetroApiInterface {
     @GET("players.json")
    suspend fun getAllPlayers(): Response<List<Player>>
     @POST("/post")
-    suspend fun createPlayer(@Body requestBody: RequestBody): Response<RequestBody>
+    suspend fun createPlayer(@Body requestBody: RequestBody): Response<ResponseBody>
 
-
+//https://changerdude.github.io/players.json
     companion object{
         var BASE_URL = "https://changerdude.github.io/"
         fun create() : RetroApiInterface {

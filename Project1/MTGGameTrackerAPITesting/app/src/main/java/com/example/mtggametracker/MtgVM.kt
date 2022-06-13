@@ -2,21 +2,22 @@ package com.example.mtggametracker
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mtggametracker.data.Player
 import com.example.mtggametracker.data.PlayerRepository
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.example.mtggametracker.data.RetrofitApi
+import com.google.gson.GsonBuilder
 import kotlinx.coroutines.launch
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 
 class MtgVM(app: Application): ViewModel() {
-    val repo: PlayerRepository
+    private val repo: PlayerRepository
     var allPlayers : LiveData<List<Player>>
 
     init {
-        repo = PlayerRepository(app)
+        repo = PlayerRepository(app, RetrofitApi.create())
         allPlayers = repo.getAllPlayers()!!
     }
 
@@ -25,11 +26,15 @@ class MtgVM(app: Application): ViewModel() {
     }
 
     fun addNewPlayer(name: String) = viewModelScope.launch {
-            repo.addPlayer(
-                Player(
-                    playerId = null, name = name, gamesPlayed = 0,
-                    gamesWon = 0, percentWon = 0, playerKills = 0,
-                    playerMoos = 0))
+        var player = Player(
+            playerId = null, name = name, gamesPlayed = 0,
+            gamesWon = 0, percentWon = 0, playerKills = 0,
+            playerMoos = 0)
+
+
+        repo.addPlayer(player, getRequestBody(player))
+
+
     }
 
     fun searchPlayers(searchText: String?): List<Player>?{
@@ -54,12 +59,18 @@ class MtgVM(app: Application): ViewModel() {
     fun orderMoos(isAsc: Boolean): List<Player>?{
         return repo.orderMoos(isAsc)
     }
-
+    //Going to add, request body form of player to param
     fun updatePlayer(player: Player) = viewModelScope.launch  {
-        repo.updatePlayer(player)
+        repo.updatePlayer(player, getRequestBody(player))
     }
 
     fun deletePlayer(player: Player) = viewModelScope.launch  {
-        repo.deletePlayer(player)
+        repo.deletePlayer(player, getRequestBody(player))
+    }
+
+    private fun getRequestBody(player : Player): RequestBody {
+        val gsonPretty = GsonBuilder().setPrettyPrinting().create()
+        val pJson : String = gsonPretty.toJson(player.toString())
+        return pJson.toRequestBody()
     }
 }

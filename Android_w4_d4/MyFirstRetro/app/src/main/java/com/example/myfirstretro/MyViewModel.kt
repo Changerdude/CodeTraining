@@ -3,6 +3,8 @@ package com.example.myfirstretro
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +27,19 @@ class MyViewModel(): ViewModel() {
 
         fun createPlayer(requestBody: RequestBody){
             CoroutineScope(Dispatchers.IO).launch{
-                repo.createPlayer(requestBody)
+                var res =repo.createPlayer(requestBody)
+                println("AAA")
+                println(res.body()?.string())
+                if(res.isSuccessful){
+                    //res is now json
+                    val gson = GsonBuilder().setPrettyPrinting().create()
+                    val pJson = gson.toJson(
+                        JsonParser.parseString(
+                            res.body()?.string()
+                        )
+                    )
+                    println(pJson)
+                }
             }
         }
 //        val api = RetroApiInterface.create().getAllPlayers()
