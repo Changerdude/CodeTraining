@@ -1,0 +1,22 @@
+MTG Game Tracker
+-------------------------
+This project is to be able to track your play groups Magic the Gathering statistics, in an easy and well orginized way.
+
+Technologies Used
+RoomDb - 2.4.2
+Lifecycle - 2.5.0-rc01
+Android Studio Chipmunk
+
+Features
+Keeps Track of player games, wins, win percentage, and more.
+Saves the player list offline
+Search and sort abilities
+
+To-do list:
+Online storage to share the data between the friend group
+Lifecounter to be recording statistics in real time
+
+Getting Started
+If you make your way the the player info page you will be greeted with any players you have already add.
+If you have not added any the button near the top of the screen will allow you to add names to the page. Then clicking on
+the name in the table will allow you to change and adjust the statistics of the player. 
