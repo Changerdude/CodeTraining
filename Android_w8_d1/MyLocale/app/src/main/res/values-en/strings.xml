@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyLocale</string>
+    <string name="main_text">Hello World!</string>
+    <string name="main_text_translated">Hello World Translated!</string>
+    <string name="to_english">To English</string>
+    <string name="to_deutsch">To German</string>
+
+</resources>

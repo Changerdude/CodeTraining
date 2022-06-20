@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">MyLocale</string>
+    <string name="main_text_translated">Hello World Translated!</string>
+    <string name="to_english">To English</string>
+    <string name="to_deutsch">To German</string>
+    <string name="main_text">Hello World!</string>
+
+</resources>
