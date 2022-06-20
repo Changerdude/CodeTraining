@@ -11,14 +11,14 @@ import retrofit2.http.*
 interface RetrofitApi {
 
     //@GET is a http request method
-    @GET("players.json")
-    suspend fun getAllPlayers(): Response<List<Player>>
-    @POST("/post")
-    suspend fun createPlayer(@Body requestBody: RequestBody): Response<ResponseBody>
-    @POST("/v4/spreadsheets/" + :request)
-    suspend fun deletePlayer(request : String)
-    @PUT
-    suspend fun updatePlayer()
+//    @GET("players.json")
+//    suspend fun getAllPlayers(): Response<List<Player>>
+//    @POST("/post")
+//    suspend fun createPlayer(@Body requestBody: RequestBody): Response<ResponseBody>
+//    @POST("/v4/spreadsheets/" + :request)
+//    suspend fun deletePlayer(request : String)
+//    @PUT
+//    suspend fun updatePlayer()
 
     //https://changerdude.github.io/players.json
     companion object{
